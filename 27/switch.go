@@ -13,6 +13,8 @@ import (
 // Ou seja, Switch Default sem nada na frente compara os case com true e o switch statement compara
 // com o statement dado
 
+//case composto é basicamente dar mais de um valor pra ser comparado
+
 //exemplos a baixo, primeiro default e segundo Statement
 
 func main() { 
@@ -36,13 +38,13 @@ func main() {
 func sub() {        
 
 	carro := "prata" 
-	switch carro {      //switch statement
+	switch carro {      //switch statement com exemplo de case composto
 
 	case "vermelho":
 		fmt.Println("Carro é vermelho")
 	case "preto":
 		fmt.Println("Carro é preto")
-	case "prata":
+	case "prata","azul":
 		fmt.Println("Carro é prata")
 	default:
 		fmt.Println("Não é nenhuma das opções") // O default é um "tratamento de erro" é quando 
