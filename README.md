@@ -1,1 +1,199 @@
 # Go
+//ep 1
+- Estrutura básica: 
+    - package main.
+    - func main: é aqui que tudo começa, é aqui que tudo acaba.
+    - import.
+- Packages:
+    - Pacotes são coleções de funções pré-prontas (ou não) que você pode utilizar.
+    - Notação: pacote.Identificador. Exemplo: fmt.Println()
+    - Documentação: fmt.Println.
+- Variáveis: "uma variável é um objeto (uma posição na memória) capaz de reter e representar um valor ou expressão."
+- Variáveis não utilizadas? Não pode: _ nelas.
+- ...funções variádicas.
+- Lição principal: package main, func main, pacote.Identificador.
+
+//ep 2
+
+- := parece uma marmota (gopher) ou o punisher.
+- Uso:
+    - Tipagem automática
+    - Só pode repetir se houverem variáveis novas 
+    - != do assignment operator (operador de atribuição)
+    - Só funciona dentro de codeblocks
+- Terminologia:
+    - keywords (palavras-chave) são termos reservados
+    - operadores, operandos
+    - statement (declaração, afirmação) → uma linha de código, uma instrução que forma uma ação, formada de expressões 
+    - expressão → qualquer coisa que "produz um resultado"
+    - scope (abrangência)
+        - package-level scope
+- Lição principal:
+    - := utilizado pra criar novas variáveis, dentro de code blocks
+    - = para atribuir valores a variáveis já existentes
+
+//ep 3
+
+- Variável declarada em um code block é undefined em outro
+- Para variáveis com uma abrangência maior, package level scope, utilizamos `var`
+- Funciona em qualquer lugar
+- Prestar atenção: chaves, colchetes, parênteses
+
+//ep4
+
+- Tipos em Go são extremamente importantes. (Veremos mais quando chegarmos em métodos e interfaces.)
+- Tipos em Go são estáticos.
+- Ao declarar uma variável para conter valores de um certo tipo, essa variável só poderá conter valores desse tipo.
+- O tipo pode ser deduzido pelo compilador:
+    - x := 10
+    - var y = "a tia do batima"
+- Ou pode ser declarado especificamente:
+    - var w string = "isso é uma string"
+    - var z int = 15
+    - na declaração var z int com package scope, atribuição z = 15 no codeblock (somente)
+- Tipos de dados primitivos: disponíveis na linguagem nativamente como blocos básicos de construção
+    - int, string, bool
+- Tipos de dados compostos: são tipos compostos de tipos primitivos, e criados pelo usuário
+    - slice, array, struct, map
+- O ato de definir, criar, estruturar tipos compostos chama-se composição. Veremos muito disso futuramente.
+
+//ep 5
+
+- Declaração vs. inicialização vs. atribuição de valor. Variáveis: caixas postais.
+- O que é valor zero? Basicamente o valor que vai ir dentro da variável quando a gente declara ela
+Antes mesmo de incializar (isto é, colocar o primeiro valor) e consequentemente antes de atribuir outro valor.
+- O valor 0 de cada tipo primitivo são os seguintes:
+- Os zeros:
+    - ints: 0
+    - floats: 0.0
+    - booleans: false
+    - strings: ""
+    - pointers, functions, interfaces, slices, channels, maps: nil
+- Use := sempre que possível.
+- Use var para package-level scope.
+
+ep 6
+
+- Setup: strings, ints, bools.
+- Strings: interpreted string literals vs. raw string literals.
+    - Rune literals.
+    - Em ciência da computação, um literal é uma notação para representar um valor fixo no código fonte. 
+- Format printing: documentação.
+    - Grupo #1: Print → standard out
+        - func Print(a ...interface{}) (n int, err error)
+        - func Println(a ...interface{}) (n int, err error)
+        - func Printf(format string, a ...interface{}) (n int, err error)
+            - Format verbs. (%v %T)
+    - Grupo #2: Print → string, pode ser usado como variável
+        - func Sprint(a ...interface{}) string
+        - func Sprintf(format string, a ...interface{}) string
+        - func Sprintln(a ...interface{}) string
+    - Grupo #3: Print → file, writer interface, e.g. arquivo ou resposta de servidor
+        - func Fprint(w io.Writer, a ...interface{}) (n int, err error)
+        - func Fprintf(w io.Writer, format string, a ...interface{}) (n int, err error)
+        - func Fprintln(w io.Writer, a ...interface{}) (n int, err error)
+
+ep 7
+
+- Revisando: tipos em Go são extremamente importantes. (Veremos mais quando chegarmos em métodos e interfaces.)
+- Tem uma história que Bill Kennedy dizia que se um dia fizesse uma tattoo, ela diria "type is life."
+- Grande parte dos aspectos mais avançados de Go dependem quase que exclusivamente de tipos.
+- Como fundação para estas ferramentas, vamos aprender a declarar nossos próprios tipos.
+- Revisando: tipos são fixos. Uma vez declarada uma variável como de um certo tipo, isso é imutável.
+- type hotdog int → var b hotdog (main hotdog)
+- Uma variável de tipo hotdog não pode ser atribuida com o valor de uma variável tipo int, mesmo que este seja o tipo subjacente de hotdog.
+
+ep 8
+
+- int vs. float: Números inteiros vs. números com frações.
+- golang.org/ref/spec → numeric types
+- Integers:
+    - Números inteiros
+    - int & uint → “implementation-specific sizes”
+    - Todos os tipos numéricos são distintos, exceto:
+        - byte = uint8
+        - rune = int32 (UTF8)
+        (O código fonte da linguagem Go é sempre em UTF-8).
+    - Tipos são únicos
+        - Go é uma linguagem estática
+        - int e int32 não são a mesma coisa
+        - Para "misturá-los" é necessário conversão
+    - Regra geral: use somente int
+- Floating point:
+    - Números racionais ou reais
+    - Regra geral: use somente float64
+- Na prática:
+    - Defaults com :=
+    - Tipagem com var
+    - Dá pra colocar número com vírgula em tipo int?
+    - Overflow
+    - Go Playground: https://play.golang.org/p/dt2x1ies5b
+- “implementation-specific sizes”? Runtime package. Word.
+    - GOOS
+
+ep 9 
+
+- Strings são sequencias de bytes.
+- Imutáveis.
+- Uma string é um "slice of bytes" (ou, em português, uma fatia de bytes).
+- Na prática:
+    - %v %T
+    - Raw string literals
+    - Conversão para slice of bytes: []byte(x)
+    - %#U, %#x
+
+ep 10 
+
+Constantes
+
+- São valores imutáveis.
+- Podem ser tipadas ou não:
+    - const oi = "Bom dia"
+    - const oi string = "Bom dia"
+- As não tipadas só terão um tipo atribuido a elas quando forem usadas.
+    - Ex. qual o tipo de 42? int? uint? float64?
+    - Ou seja, é uma flexibilidade conveniente.
+- Na prática: int, float, string.
+    - const x = y
+    - const ( x = y )
+
+- Basicamente uma constante que não teve seu tipo atribuido na declaração/atribuição só tem o tipo definido
+- quando ela é usada, diferente das variáveis que tem o tipo definido durante sua atribuição
+
+ep 11
+
+ Numa declaração de constantes, o identificador iota representa números sequenciais.
+- Na prática.
+    - iota, iota + 1, a = iota b c, reinicia em cada const, _
+
+ep 12
+
+- Deslocamento de bits
+
+https://medium.com/learning-the-go-programming-language/bit-hacking-with-go-e0acee258827
+
+ep 13
+
+- Existem 3 For, o de clausula que ta na pasta 22 e precisa de inicialização, condição e ação
+- O de single condition que é mais direto como um while e está na pasta 23 e o de Range que ta na 
+    - Inicialização, condição, pós
+    - Ponto e vírgula?
+    - gobyexample.com
+    - Não existe while!
+
+ep 14
+
+- If, else.
+- If, else if, else.
+- If, else if, else if, ..., else.
+
+ep 15 
+
+- Switch:
+    - pode avaliar uma expressão 
+        - switch statement == case (value)
+        - default switch statement == true (bool)
+    - não há fall-through por padrão
+    - criando fall-through
+    - default
+    - cases compostos
