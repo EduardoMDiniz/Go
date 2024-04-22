@@ -225,3 +225,20 @@ ep 17
 - pkg/builtin/#append: "If it has sufficient capacity, the destination is resliced to accommodate the new elements. If it does not, a new underlying array will be allocated."
 - Effective Go.
 - Go Playground: https://play.golang.org/p/e8GWzyEEL8
+
+ep 18
+
+- MAPS 
+- Utiliza o formato key:value.
+- E.g. nome e telefone
+- Performance excelente para lookups.
+- map[key]value{ key: value }
+- Acesso: m[key]
+- Key sem value retorna zero. Isso pode trazer problemas.
+- Para verificar: comma ok idiom.
+    - v, ok := m[key]
+    - ok é um boolean, true/false
+- Na prática: if v, ok := m[key]; ok { }
+- Para adicionar um item: m[v] = value
+- Maps não tem ordem.
+- Go Playground: https://play.golang.org/p/JXDdJan8Ev
