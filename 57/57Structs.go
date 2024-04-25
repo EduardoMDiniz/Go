@@ -30,4 +30,8 @@ func main() {
 		cpf:       02443541622,
 	}
 	fmt.Println(ronaldo)
+	fmt.Println(ronaldo.nome)
+	fmt.Println(ronaldo.cpf)
 }
+
+// Exemplos de forma de acessar os atributos adquela struct (NomeStruct.atributo)
