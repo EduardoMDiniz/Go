@@ -50,4 +50,30 @@ func main() {
 
 	}
 
+	meumapa := make(map[string]pessoa) //Criando o map usando make
+
+	meumapa["Moraes"] = pessoa{
+		nome:      "joão",
+		sobrenome: "Moraes",
+		saboresfav: saboresfav{
+			saboresfavoritos: []string{"Creme", "Flocos"},
+		},
+	}
+	meumapa["Garibaldi"] = pessoa{
+		nome: "Anita",
+		sobrenome: "Garibaldi",
+		saboresfav: saboresfav{ 
+			saboresfavoritos: []string{"Menta","Amendoas"},
+		},
+	}
+
+	for _, valor := range meumapa{
+		fmt.Println(valor)
+	}
 }
+
+/*
+- Utilizando a solução anterior, coloque os valores do tipo "pessoa" num map, utilizando os sobrenomes como key.
+- Demonstre os valores do map utilizando range.
+- Os diferentes sabores devem ser demonstrados utilizando outro range, dentro do range anterior.
+- Solução: https://play.golang.org/p/GLK11Q1_x8y */
