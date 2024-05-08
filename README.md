@@ -317,3 +317,7 @@ ep 22
     - DB
     - Writer interface: arquivos locais, http request/response
 - Se isso estiver complicado, não se desespere. É foda mesmo. Com tempo e prática a fluência vem.
+
+- Teste de Mesa
+
+- O Teste de Mesa é um processo manual que é utilizado para validar a lógica de um determinado algoritmo. Esse teste consiste em acompanhar os valores das variáveis do programa e verificar se os resultados são os esperados
