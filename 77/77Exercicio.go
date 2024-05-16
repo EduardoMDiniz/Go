@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+/* - Crie uma função que retorna uma função.
+- Atribua a função retornada a uma variável.
+- Chame a função retornada. */
+
 func main (){
 
 
