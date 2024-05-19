@@ -321,3 +321,19 @@ ep 22
 - Teste de Mesa
 
 - O Teste de Mesa é um processo manual que é utilizado para validar a lógica de um determinado algoritmo. Esse teste consiste em acompanhar os valores das variáveis do programa e verificar se os resultados são os esperados
+
+ep 23 
+
+- PONTEIRO É UMA VARIÁVEL QUE ARMAZENNA UM ENDEREÇO DA MEMORIA
+
+ - Todos os valores ficam armazenados na memória.
+- Toda localização na memória possui um endereço.
+- Um pointeiro se refere a esse endereço.
+- Notações:
+    - &variável mostra o endereço de uma variável
+        - %T: variável vs. &variável
+    - *variável faz de-reference, mostra o valor que consta nesse endereço
+    - ????: *&var funciona!
+    - *type é um tipo que contem o endereço de um valor do tipo type, nesse caso * não é um operador
+- Exemplo: a := 0; b := &a; *b++
+- Go Playground: https://play.golang.org/p/gC1qGFUYrV
