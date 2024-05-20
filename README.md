@@ -337,3 +337,10 @@ ep 23
     - *type é um tipo que contem o endereço de um valor do tipo type, nesse caso * não é um operador
 - Exemplo: a := 0; b := &a; *b++
 - Go Playground: https://play.golang.org/p/gC1qGFUYrV
+
+ EP 24
+
+- Exportações em GO
+- Para exportamos, funções, métodos, variavéis etc em go, eles precisam começar com a letra Maiuscula, assim, quando formos
+- Exportar um package para outro aquelas coisas estarão exportadas lá
+

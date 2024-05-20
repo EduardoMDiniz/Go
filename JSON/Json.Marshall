@@ -1,0 +1,2 @@
+Json obviamente é um formato de guardar objetos, em go o que a gente conhece por objeto são as variaveis do tipo struct
+então no Próximo documennto eu vou fazer um obj em go (struct) virar Json através da função marshall
