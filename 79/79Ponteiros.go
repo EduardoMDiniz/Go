@@ -23,5 +23,5 @@ func main (){
 	*y++
 
 	fmt.Println(y) //vai funcionar
-}
 
+}
