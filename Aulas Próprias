@@ -1,0 +1,38 @@
+Neste arquivo eu vou escrever tudo que eu acho importante lembrar em GO e Lógica de prog - eu irei escrever praticamente tudo
+Com o intuito de sempre vir a este arquivo e ver os tópicos que eu possa ter esquecido e ir ver dnv sobre
+
+- Tópicos
+
+- Básicos -
+Pacote FMT e Conversão de tipo
+
+Var e Const
+
+Loop For e For Range / For Range em slice
+
+Nested Loop
+
+IF Else, Switch
+
+Switch para interface vazia (bem exclusivo e não comum, mas necessário)
+
+Slice, append de slice, Slice Make
+
+Maps 
+
+- Intermédiário -
+
+Funções básicas, Funções com arg e retorno, Funções dentro de funções, Funções callback
+
+Retornar Função
+
+Passar Função como expressão (alocar ela em variável)
+
+Recursividade
+
+Structs, Struct embutido
+
+Método, Interface, Função que implementa a Interface
+
+Ponteiros
+ 

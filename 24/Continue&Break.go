@@ -4,8 +4,7 @@ import (
 	"fmt"
 )
 
-// O continue e o Break necessitam de uma estruturação condicional, então vou usar o IF e o ELSE
-
+// O continue e o Break necessitam de uma estruturação condicional, então vou usar o FOR
 func main() {
 
 	for x := 0; x < 10; x++ {
