@@ -1,0 +1,21 @@
+INTERFACE WRITER
+
+A interface Writer é uma interface que obviamente implementa alguns métodos, o principal deles é o write.
+
+Esse método obviamente vai funcionar com qualquer arquivo que implemente a interface writer, como file. 
+
+A estrutura da interface writer implemetando o write por exemplo é a seguinte. 
+
+type Writer interface { 
+
+    Write(p []byte) (n int, err error) 
+
+}
+
+mas obviamennte ja ta criado, tanto a interface writer quanto o método write
+
+fato é que a gente pode implementar a interface writer através de qualquer var que atenda o método write 
+
+na hora de criar a func que recebe essa interface a gente vai criar da seguinte forma 
+
+func NewEncoder (w io.Writer) *Encoder
