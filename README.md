@@ -363,3 +363,31 @@ EP 25
     - Ou:
         - func Dial(network, address string) (Conn, error)
         - type Conn interface { [...] Write(b []byte) (n int, err error) [...] }
+
+EP 26
+
+- Sort serve para ordenar slices.
+    - Como faz?
+    - golang.org/pkg/ → sort
+    - godoc.org/sort → examples
+    - Sort altera o valor original!
+- Exemplo: Ints, Strings.
+- Go Playground: 
+    - sort.Strings: https://play.golang.org/p/Rs1NVwmg7h
+    - sort.Ints: https://play.golang.org/p/I2_vsHujZa
+
+EP 27
+
+- O sort que eu quero não existe. Quero fazer o meu.
+- Para isso podemos usar o func Sort do package sort. Vamos precisar de um sort.Interface.
+    - type Interface interface { Len() int; Less(i, j int) bool; Swap(i, j int) }
+- Ou seja, se tivermos um tipo que tenha esses métodos, ao executar sort.Sort(x) as funções que vão rodar são as minhas, não as funções pré-prontas como no exercício anterior.
+- E aí posso fazer do jeito que eu quiser.
+- Exemplo:
+    - struct carros: nome, consumo, potencia
+    - slice []carros{carro1, carro2, carro3} (Sort ordena *slices!*)
+    - tipo ordenarPorPotencia
+    - tipo ordenarPorConsumo
+    - tipo ordenarPorLucroProDonoDoPosto
+- Go Playground: https://play.golang.org/p/KOIhAsE3OK
+

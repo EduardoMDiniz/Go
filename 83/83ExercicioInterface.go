@@ -65,6 +65,7 @@ type salariototal interface{
 //os argumentos que os métodos da interface necessitam x salario y salario.
 func func_que_implementa_interface (s salariototal, x salario, y salario){
 	s.calculo_salario(x,y)
+
 }
 
 func main (){
