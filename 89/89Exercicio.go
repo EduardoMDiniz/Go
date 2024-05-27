@@ -1,10 +1,11 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 )
 
-//partindo desse código transforme use em json
+//partindo desse código transforme []user em json
 
 type user struct {
 	first string
@@ -32,6 +33,10 @@ func main() {
 	fmt.Println(users)
 
 	// your code goes here
-
+	usersJson, erro := json.Marshal(users)
+	if erro != nil {
+		fmt.Println(erro)
+	}
+	fmt.Println(string(usersJson))
 	
 }
