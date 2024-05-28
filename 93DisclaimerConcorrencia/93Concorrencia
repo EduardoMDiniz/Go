@@ -1,0 +1,8 @@
+o Grande Problema a ser levado em consideração quando trabalhamos com concorrência é o acesso a variáveis
+
+Uma funçao que altera uma variavel pode influenciar no resultado de uma outra função que esta usando essa mesma variavel.
+Não queremos isso.
+
+Em go temos como resolver esse problema de 3 formas, Mutex, Atomic e Canais
+
+A forma definitiva de sanar esse problema são os Canais, mas aqui eu também vou anotar sobre Mutex e Atomic bem antes de canais.
